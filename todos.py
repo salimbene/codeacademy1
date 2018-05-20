@@ -259,6 +259,18 @@ for x in range(a,b):
 """
 23. Hacer un pseudocodigo que cuente las veces que aparece una determinada
 letra en una frase que introduciremos por teclado.
+
+c=0
+f=raw_input('Ingrese frase:')
+l=raw_input('Ingrese letra:')
+
+print f.count(l)
+
+for x in f:
+	if x == l:
+		c+=1
+
+print c
 """
 
 """
@@ -415,14 +427,82 @@ while o != 0:
 
 """
 
-31. Hacer un programa que nos permita introducir un numero por teclado y sobre
-el se realicen las siguientes operaciones: comprobar si es primo, hallar
-su factorial o imprimir su tabla de multiplicar.
-32. Crear un array de 20 elementos con nombres de personas.
-Visualizar los elementos de la lista.
-33. Hacer un programa que lea las calificaciones de un alumno en 10 asignaturas,
-las almacene en un vector y calcule e imprima su promedio.
-34. Hacer un programa que lea 5 n umeros y muestre las tablas de multiplicar de
-todos ellos.
+31. Hacer un programa que nos permita introducir un numero por teclado y sobre el se realicen las siguientes operaciones:
+- comprobar si es primo
+- hallar su factorial
+- imprimir su tabla de multiplicar
+
+
+
+def prime(n):
+	
+	for x in range(n-1,1,-1):
+		if  (n % x == 0) and (x != 1):
+			return False
+	
+	return True
+
+def tabla(n):
+
+	for x in range(1,11):
+		print x,'x',n,'=',n*x
+
+def factorial(n):
+
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+n=int(raw_input('Ingrese nro: '))
+print('Primalidad:',prime(n))
+print('Tabla:')
+tabla(n)
+print('Factorial',factorial(n))
+"""
+
+
+
+"""
+32. Crear un array de 20 elementos con nombres de personas. Visualizar los elementos de la lista.
+
+n = ['Jorge','Carlos','Pedro','Matias','Martin','Vicky','Eugenia','Maria','Cecilia','Carolina','Dario','Leonardo','Natalia','Jose','Pablo','Juliana','Fernanda','Marina','Damian','Guido']
+
+for x in n:
+	print(x)
+"""
+
+"""
+#!/usr/bin/python2.7
+
+33. Hacer un programa que lea las calificaciones de un alumno en 10 asignaturas, las almacene en un vector y calcule e imprima su promedio.
+
+n = [0] * 10
+p=0
+
+for x in n:
+	x =int(raw_input('Ingrese nota'))
+	p+=x
+
+print p/len(n)
+"""
+
+
+"""
+34. Hacer un programa que lea 5 numeros y muestre las tablas de multiplicar de todos ellos.
+
+def tabla(n):
+
+	for x in range(1,11):
+		print x,'x',n,'=',n*x
+
+
+n = [0] * 5
+
+for i,x in enumerate(n):
+	n[i]=int(raw_input('Ingrese nro: '))
+
+for x in n:
+	print tabla(x)
 
 """
